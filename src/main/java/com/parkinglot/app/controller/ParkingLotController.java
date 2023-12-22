@@ -7,9 +7,9 @@ import com.parkinglot.app.exception.*;
 import com.parkinglot.app.factory.ParkVehicleServiceStrategyFactory;
 import com.parkinglot.app.factory.ParkingLotFactory;
 import com.parkinglot.app.factory.VehicleFactory;
-import com.parkinglot.app.model.ParkVehicleRequestBody;
 import com.parkinglot.app.model.ParkingLot;
 import com.parkinglot.app.model.Vehicle;
+import com.parkinglot.app.model.VehicleDetails;
 import com.parkinglot.app.service.ParkVehicleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -36,10 +36,10 @@ public class ParkingLotController {
     }
 
     @PostMapping("/park")
-    public ResponseEntity<?> parkVehicle(@RequestBody ParkVehicleRequestBody parkVehicleRequestBody) throws UnknownVehicleTypeException, UnknownParkVehicleStrategyException, UnknownParkingLotImplementationException, ParkingFullException, UnknownParkingSpotException, VehicleParkedException {
+    public ResponseEntity<?> parkVehicle(@RequestBody VehicleDetails vehicleDetails) throws UnknownVehicleTypeException, UnknownParkVehicleStrategyException, UnknownParkingLotImplementationException, ParkingFullException, UnknownParkingSpotException, VehicleParkedException {
 
-        Vehicle vehicle = vehicleFactory.getVehicleInstance(parkVehicleRequestBody);
-        vehicle.setRegistrationNumber(parkVehicleRequestBody.getRegistrationNumber());
+        Vehicle vehicle = vehicleFactory.getVehicleInstance(vehicleDetails);
+        vehicle.setRegistrationNumber(vehicleDetails.getRegistrationNumber());
 
         ParkingLot parkingLot = parkingLotFactory.getParkingLotImplementation(ParkingLotType.DEFAULT_PARKING_LOT.getParkingLotType());
 
@@ -53,10 +53,10 @@ public class ParkingLotController {
     }
 
     @PostMapping("/unpark")
-    public ResponseEntity<?> unParkVehicle(@RequestBody ParkVehicleRequestBody unparkVehicleRequestBody) throws UnknownVehicleTypeException, UnknownParkVehicleStrategyException, UnknownParkingLotImplementationException, VehicleNotFoundException {
+    public ResponseEntity<?> unParkVehicle(@RequestBody VehicleDetails vehicleDetails) throws UnknownVehicleTypeException, UnknownParkVehicleStrategyException, UnknownParkingLotImplementationException, VehicleNotFoundException {
 
-        Vehicle vehicle = vehicleFactory.getVehicleInstance(unparkVehicleRequestBody);
-        vehicle.setRegistrationNumber(unparkVehicleRequestBody.getRegistrationNumber());
+        Vehicle vehicle = vehicleFactory.getVehicleInstance(vehicleDetails);
+        vehicle.setRegistrationNumber(vehicleDetails.getRegistrationNumber());
 
         ParkVehicleService parkVehicleService = parkVehicleServiceStrategyFactory
                 .getParkVehicleServiceStrategy(ParkVehicleServiceStrategyType.DEFAULT_PARK_VEHICLE_SERVICE_STRATEGY.getParkVehicleServiceStrategyType());

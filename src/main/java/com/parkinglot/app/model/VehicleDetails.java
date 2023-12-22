@@ -1,6 +1,6 @@
 package com.parkinglot.app.model;
 
-public class ParkVehicleRequestBody {
+public class VehicleDetails {
 
     private String vehicleType;
     private String registrationNumber;
