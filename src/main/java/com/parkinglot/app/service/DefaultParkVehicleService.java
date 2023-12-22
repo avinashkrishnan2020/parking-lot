@@ -26,16 +26,16 @@ public class DefaultParkVehicleService implements ParkVehicleService{
     public CarParkAllocationStatus parkVehicle(Vehicle vehicle, ParkingLot parkingLot) throws ParkingFullException, VehicleParkedException, UnknownParkingSpotException {
         CopyOnWriteArrayList<ParkingSpot> parkingSpots = (CopyOnWriteArrayList<ParkingSpot>)parkingLot.getParkingLot();
 
-        // Throw exception if vehicle already parked
-        if(parkingSpots.stream().filter(parkingSpot ->
-                parkingSpot.getVehicle().equals(vehicle)).findAny().isPresent()){
-            throw new VehicleParkedException(Constants.VEHICLE_PARKED_ERROR_MESSAGE);
-        }
-
         // throw exception is parking full, else park vehicle
         if(parkingSpots.size() == Constants.MAX_PARK_CAPACITY){
             throw new ParkingFullException(Constants.PARKING_LOT_FULL_ERROR_MESSAGE);
         } else {
+            // Throw exception if vehicle already parked
+            if(parkingSpots.stream().filter(parkingSpot ->
+                    parkingSpot.getVehicle().equals(vehicle)).findAny().isPresent()){
+                throw new VehicleParkedException(Constants.VEHICLE_PARKED_ERROR_MESSAGE);
+            }
+
             ParkingSpot parkingSpot = parkingSpotFactory
                     .getParkingSpotInstance(vehicle.getParkingSpotType().getParkingSpotType());
 

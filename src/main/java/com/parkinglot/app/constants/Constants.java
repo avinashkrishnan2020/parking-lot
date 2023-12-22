@@ -2,7 +2,7 @@ package com.parkinglot.app.constants;
 
 public class Constants {
 
-
+    public static final String CAR = "car";
     public static final int MAX_PARK_CAPACITY = 100;
     public static final String SUCCESSFUL = "Successful";
     public static final String FEE_FORMAT = "%.4f";
