@@ -6,6 +6,14 @@
   - /unpark -> to remove a vehicle from parking
 
 
+## Running the API
+- The application uses Java 21.
+- Simply clone the API and start the application. The application has been configured to start on port:8081
+- Open PostMan and give the following Http POST requests:
+  - For parking a vehicle: http://localhost:8081/park
+  - For removing a vehicle from parking: http://localhost:8081/unpark
+- Pass the JSON shown in the next section as your request body.
+  
 ## Sample request body for /park and /unpark:
 ```
 {
@@ -68,6 +76,11 @@
 ### Strategy Design Pattern
 - This pattern lets us plug and play the desired park algorithm for the application. Currently, the application has a DefaultParkVehicleService(implements ParkVehicleService interface) which simple iterates through a CopyOnWriteArrayList<> and adds the vehicle into the list if not present already.
 - In the future, we may utilize a more optimal algorithm to find parking spots that are near to entrance or elevator. In such cases, we can create a new implementation of ParkVehicleService interface and plug into the application.
+![image](https://github.com/avinashkrishnan2020/parking-lot/assets/62984268/f9a9dd63-740e-4ced-b55a-f8e77c521b9f)
+
+
+### Handling multiple vehicles
+- The ParkingLot class is a Singleton class with thread-safe CopyOnWriteArrayList<ParkingSpot>. This allows multiple vehicles/requests trying to access the parking lot simultaneously.
 
 
 
