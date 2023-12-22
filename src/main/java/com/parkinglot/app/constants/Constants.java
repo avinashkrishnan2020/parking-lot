@@ -8,6 +8,13 @@ public class Constants {
     public static final String FEE_FORMAT = "%.4f";
     public static final String GBP_CURRENCY = "£";
 
+    public static final Double CAR_FEE_PER_HOUR = 2.0;
+
+    public static final String CAR_PARKING_SPOT="carParkingSpot";
+    public static final String DEFAULT_PARKING_LOT = "defaultParkingLot";
+    public static final String DEFAULT_PARK_VEHICLE_SERVICE ="defaultParkVehicleService";
+
+
     public static final String VEHICLE_PARKED_ERROR_MESSAGE = "Vehicle is already parked.";
     public static final String PARKING_LOT_FULL_ERROR_MESSAGE = "Parking Lot is full.";
     public static final String VEHICLE_NOT_FOUND_ERROR_MESSAGE = "Vehicle not found.";

@@ -41,7 +41,7 @@ public class DefaultParkVehicleService implements ParkVehicleService{
 
             parkingSpot.setVehicle(vehicle);
             parkingSpot.setVehicleParkStartTime(System.currentTimeMillis());
-            parkingSpot.setFee(vehicle.getParkingSpotType().getFee());
+            parkingSpot.setFeePerHour(vehicle.getParkingSpotType().getFeePerHour());
             parkingSpots.add(parkingSpot);
 
             return new CarParkAllocationStatus(Constants.SUCCESSFUL, parkingSpot);
@@ -71,6 +71,6 @@ public class DefaultParkVehicleService implements ParkVehicleService{
     public Double calculateParkingFee(ParkingSpot parkingSpot) {
         long timeElapsed = System.currentTimeMillis()-parkingSpot.getVehicleParkStartTime();
         double hours = (double) timeElapsed / (1000 * 60 * 60);
-        return parkingSpot.getFee()*hours;
+        return parkingSpot.getFeePerHour()*hours;
     }
 }

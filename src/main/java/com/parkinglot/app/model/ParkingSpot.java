@@ -4,7 +4,7 @@ public class ParkingSpot {
 
     private Vehicle vehicle;
     private long vehicleParkStartTime;
-    private Double fee;
+    private Double feePerHour;
 
     public ParkingSpot() {
     }
@@ -14,10 +14,10 @@ public class ParkingSpot {
         this.vehicleParkStartTime = vehicleParkStartTime;
     }
 
-    public ParkingSpot(Vehicle vehicle, long vehicleParkStartTime, Double fee) {
+    public ParkingSpot(Vehicle vehicle, long vehicleParkStartTime, Double feePerHour) {
         this.vehicle = vehicle;
         this.vehicleParkStartTime = vehicleParkStartTime;
-        this.fee = fee;
+        this.feePerHour = feePerHour;
     }
 
     public Vehicle getVehicle() {
@@ -25,12 +25,12 @@ public class ParkingSpot {
         return vehicle;
     }
 
-    public Double getFee() {
-        return fee;
+    public Double getFeePerHour() {
+        return feePerHour;
     }
 
-    public void setFee(Double fee) {
-        this.fee = fee;
+    public void setFeePerHour(Double feePerHour) {
+        this.feePerHour = feePerHour;
     }
 
     public void setVehicle(Vehicle vehicle) {

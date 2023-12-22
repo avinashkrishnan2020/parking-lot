@@ -1,14 +1,14 @@
 package com.parkinglot.app.constants;
 
 public enum ParkingSpotType {
-    CAR("carParkingSpot", 2.0);
+    CAR(Constants.CAR_PARKING_SPOT, Constants.CAR_FEE_PER_HOUR);
 
     private String parkingSpotType;
-    private Double fee;
+    private Double feePerHour;
 
-    ParkingSpotType(String carParkingSpot, Double fee) {
+    ParkingSpotType(String carParkingSpot, Double feePerHour) {
         this.parkingSpotType = carParkingSpot;
-        this.fee = fee;
+        this.feePerHour = feePerHour;
     }
 
     public String getParkingSpotType() {
@@ -19,11 +19,11 @@ public enum ParkingSpotType {
         this.parkingSpotType = parkingSpotType;
     }
 
-    public Double getFee() {
-        return fee;
+    public Double getFeePerHour() {
+        return feePerHour;
     }
 
-    public void setFee(Double fee) {
-        this.fee = fee;
+    public void setFeePerHour(Double feePerHour) {
+        this.feePerHour = feePerHour;
     }
 }

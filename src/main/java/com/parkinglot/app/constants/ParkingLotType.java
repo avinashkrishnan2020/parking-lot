@@ -1,7 +1,7 @@
 package com.parkinglot.app.constants;
 
 public enum ParkingLotType {
-    DEFAULT_PARKING_LOT("defaultParkingLot");
+    DEFAULT_PARKING_LOT(Constants.DEFAULT_PARKING_LOT);
 
     private String parkingLotType;
 

@@ -2,7 +2,7 @@ package com.parkinglot.app.constants;
 
 public enum ParkVehicleServiceStrategyType {
 
-    DEFAULT_PARK_VEHICLE_SERVICE_STRATEGY("defaultParkVehicleService");
+    DEFAULT_PARK_VEHICLE_SERVICE_STRATEGY(Constants.DEFAULT_PARK_VEHICLE_SERVICE);
 
     private String parkVehicleServiceStrategyType;
 
