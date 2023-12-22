@@ -39,3 +39,13 @@
     "errorMessage": "Parking Lot is full."
 }
 
+
+## Software Design
+- The software implements Factory Design Pattern and Strategy Design Pattern for reusability and maintainability.
+- The application has Parent classes Vehicle and ParkingSpot. From this, different types of vehicles such as Car, Bikecan be extended from Vehicle and different parking spots such as CarParkingSpot can be extended from ParkingSpot. This allows tremendous flexibility such as assigning different hourly parking rates for each vehicle types, etc.
+
+- ![image](https://github.com/avinashkrishnan2020/parking-lot/assets/62984268/88bc9c10-4b22-4915-a099-00d379d72963)
+
+- ![image](https://github.com/avinashkrishnan2020/parking-lot/assets/62984268/dd29f243-1d77-4a0d-a20c-c361cb01a52c)
+
+
