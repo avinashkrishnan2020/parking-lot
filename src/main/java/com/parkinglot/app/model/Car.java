@@ -13,7 +13,14 @@ public class Car extends Vehicle{
     }
 
     public Car(String registrationNumber, VehicleType vehicleType) {
+
         super(registrationNumber, vehicleType);
     }
+
+    public Car(String registrationNumber, VehicleType vehicleType, ParkingSpotType parkingSpotType){
+        super(registrationNumber, vehicleType, parkingSpotType);
+    }
+
+
 
 }

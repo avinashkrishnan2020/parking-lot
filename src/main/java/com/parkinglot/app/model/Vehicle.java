@@ -25,6 +25,12 @@ public class Vehicle {
         this.vehicleType = vehicleType;
     }
 
+    public Vehicle(String registrationNumber, VehicleType vehicleType, ParkingSpotType parkingSpotType){
+        this.registrationNumber = registrationNumber;
+        this.vehicleType = vehicleType;
+        this.parkingSpotType = parkingSpotType;
+    }
+
     public ParkingSpotType getParkingSpotType() {
         return parkingSpotType;
     }

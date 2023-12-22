@@ -2,9 +2,9 @@ package com.parkinglot.app.model;
 
 public class CarParkDeallocationStatus {
     private String status;
-    private Double parkingFee;
+    private String parkingFee;
 
-    public CarParkDeallocationStatus(String status, Double parkingFee) {
+    public CarParkDeallocationStatus(String status, String parkingFee) {
         this.status = status;
         this.parkingFee = parkingFee;
     }
@@ -17,11 +17,11 @@ public class CarParkDeallocationStatus {
         this.status = status;
     }
 
-    public Double getParkingFee() {
+    public String getParkingFee() {
         return parkingFee;
     }
 
-    public void setParkingFee(Double parkingFee) {
+    public void setParkingFee(String parkingFee) {
         this.parkingFee = parkingFee;
     }
 }

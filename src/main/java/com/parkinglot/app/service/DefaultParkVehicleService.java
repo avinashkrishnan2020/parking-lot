@@ -57,8 +57,10 @@ public class DefaultParkVehicleService implements ParkVehicleService{
             if(parkingSpot.getVehicle().equals(vehicle)){
 
                 double fee = calculateParkingFee(parkingSpot);
+                String feeFormatted = Constants.GBP_CURRENCY + String.format(Constants.FEE_FORMAT, fee);
+
                 parkingSpots.remove(parkingSpot);
-                return new CarParkDeallocationStatus(Constants.SUCCESSFUL, fee);
+                return new CarParkDeallocationStatus(Constants.SUCCESSFUL, feeFormatted);
             }
         }
         // If vehicle not found, throw exception

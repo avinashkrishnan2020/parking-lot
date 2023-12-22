@@ -5,6 +5,8 @@ public class Constants {
 
     public static final int MAX_PARK_CAPACITY = 100;
     public static final String SUCCESSFUL = "Successful";
+    public static final String FEE_FORMAT = "%.4f";
+    public static final String GBP_CURRENCY = "£";
 
     public static final String VEHICLE_PARKED_ERROR_MESSAGE = "Vehicle is already parked.";
     public static final String PARKING_LOT_FULL_ERROR_MESSAGE = "Parking Lot is full.";
@@ -16,4 +18,5 @@ public class Constants {
     public static final String UNKNOWN_PARK_VEHICLE_SERVICE_STRATEGY = "Unkown park vehicle service strategy.";
 
     public static final String UNKNOWN_VEHICLE_TYPE = "Unknown vehicle type.";
+
 }

@@ -14,6 +14,12 @@ public class ParkingSpot {
         this.vehicleParkStartTime = vehicleParkStartTime;
     }
 
+    public ParkingSpot(Vehicle vehicle, long vehicleParkStartTime, Double fee) {
+        this.vehicle = vehicle;
+        this.vehicleParkStartTime = vehicleParkStartTime;
+        this.fee = fee;
+    }
+
     public Vehicle getVehicle() {
 
         return vehicle;
