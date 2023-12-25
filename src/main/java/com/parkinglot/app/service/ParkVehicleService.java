@@ -12,5 +12,5 @@ public interface ParkVehicleService {
 
     public CarParkAllocationStatus parkVehicle(Vehicle vehicle, ParkingLot parkingLot) throws ParkingFullException, UnknownParkingSpotException, VehicleParkedException;
     public CarParkDeallocationStatus unParkVehicle(Vehicle vehicle, ParkingLot parkingLot) throws VehicleNotFoundException;
-    public Double calculateParkingFee(ParkingSpot parkingSpot);
+    public String calculateParkingFee(ParkingSpot parkingSpot);
 }
